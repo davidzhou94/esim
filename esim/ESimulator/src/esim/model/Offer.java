@@ -2,8 +2,9 @@ package esim.model;
 
 /**
  * A class describing an offer on the Market.
+ * 
  * @author David
- *
+ * 
  */
 public class Offer implements Comparable<Offer>
 {
@@ -11,13 +12,17 @@ public class Offer implements Comparable<Offer>
     private Firm aFirm;
     private double aAmount;
     private Money aPrice;
-    
+
     /**
      * 
-     * @param pGood the Good.
-     * @param pFirm the Firm.
-     * @param pAmount the Amount of the Offer.
-     * @param pPrice the Price of the Offer.
+     * @param pGood
+     *            the Good.
+     * @param pFirm
+     *            the Firm.
+     * @param pAmount
+     *            the Amount of the Offer.
+     * @param pPrice
+     *            the Price of the Offer.
      */
     public Offer(Good pGood, Firm pFirm, double pAmount, Money pPrice)
     {
@@ -26,6 +31,7 @@ public class Offer implements Comparable<Offer>
         aAmount = pAmount;
         aPrice = pPrice;
     }
+
     /**
      * 
      * @return the Good.
@@ -34,6 +40,7 @@ public class Offer implements Comparable<Offer>
     {
         return aGood;
     }
+
     /**
      * 
      * @return the Amount.
@@ -42,14 +49,17 @@ public class Offer implements Comparable<Offer>
     {
         return aAmount;
     }
+
     /**
      * 
-     * @param pPrice the new Price.
+     * @param pPrice
+     *            the new Price.
      */
     public void setPrice(Money pPrice)
     {
         aPrice = pPrice;
     }
+
     /**
      * 
      * @return the Price.
@@ -58,10 +68,12 @@ public class Offer implements Comparable<Offer>
     {
         return aPrice;
     }
+
     /**
      * 
      * @pre pAmount <= aAmount
-     * @param pAmount the Amount to purchase.
+     * @param pAmount
+     *            the Amount to purchase.
      */
     public void purchaseAmount(double pAmount)
     {
@@ -71,7 +83,7 @@ public class Offer implements Comparable<Offer>
             aAmount -= pAmount;
         }
     }
-    
+
     /**
      * Purchase the entire amount made available by this good.
      */
@@ -79,7 +91,7 @@ public class Offer implements Comparable<Offer>
     {
         this.purchaseAmount(aAmount);
     }
-    
+
     @Override
     public int compareTo(Offer pOther)
     {

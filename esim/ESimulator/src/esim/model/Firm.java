@@ -9,8 +9,9 @@ import java.util.Set;
 
 /**
  * A class that describes a Firm.
+ * 
  * @author David
- *
+ * 
  */
 public class Firm
 {
@@ -20,10 +21,11 @@ public class Firm
     private Map<Good, Double> aInventory;
     private Map<Good, Offer> aOffers;
     private Money aBalance;
-    
+
     /**
      * 
-     * @param pName The name of the firm.
+     * @param pName
+     *            The name of the firm.
      */
     public Firm(String pName)
     {
@@ -34,7 +36,7 @@ public class Firm
         aOffers = new Hashtable<Good, Offer>();
         aBalance = new Money(0);
     }
-    
+
     /**
      * 
      * @return The name of the firm.
@@ -43,36 +45,41 @@ public class Firm
     {
         return aName;
     }
-    
+
     /**
      * 
-     * @param pAmount The amount of money to increase the balance by.
+     * @param pAmount
+     *            The amount of money to increase the balance by.
      */
     public void increaseBalance(double pAmount)
     {
         aBalance.transact(pAmount);
     }
-    
+
     /**
      * 
-     * @param pAmount The amount of money to decrease the balance by.
+     * @param pAmount
+     *            The amount of money to decrease the balance by.
      */
     public void decreaseBalance(double pAmount)
     {
         aBalance.transact(-1 * pAmount);
     }
+
     /**
      * 
-     * @param pGood The good to add.
+     * @param pGood
+     *            The good to add.
      */
     public void addProduct(Good pGood)
     {
         aProducts.add(pGood);
     }
-    
+
     /**
      * 
-     * @param pWorker The worker to add.
+     * @param pWorker
+     *            The worker to add.
      */
     public void addWorker(Job pWorker)
     {

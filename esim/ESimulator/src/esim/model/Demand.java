@@ -2,8 +2,9 @@ package esim.model;
 
 /**
  * A class to describe a demand for a good.
+ * 
  * @author David
- *
+ * 
  */
 public class Demand
 {
@@ -11,12 +12,16 @@ public class Demand
     private double aAmount;
     private Money aPriceCeiling;
     private double aIncreaseFactor;
-    
+
     /**
-     * @param pGood the Good.
-     * @param pAmount the Amount.
-     * @param pPriceCeiling the Price Ceiling.
-     * @param pIncreaseFactor the Increase Factor.
+     * @param pGood
+     *            the Good.
+     * @param pAmount
+     *            the Amount.
+     * @param pPriceCeiling
+     *            the Price Ceiling.
+     * @param pIncreaseFactor
+     *            the Increase Factor.
      */
     public Demand(Good pGood, double pAmount, double pPriceCeiling, double pIncreaseFactor)
     {
@@ -25,7 +30,7 @@ public class Demand
         this.aPriceCeiling = new Money(pPriceCeiling);
         this.aIncreaseFactor = pIncreaseFactor;
     }
-    
+
     /**
      * 
      */
@@ -33,7 +38,7 @@ public class Demand
     {
         aAmount += aIncreaseFactor;
     }
-    
+
     /**
      * @return the aGood.
      */
@@ -41,6 +46,7 @@ public class Demand
     {
         return aGood;
     }
+
     /**
      * @return the Amount.
      */
@@ -48,13 +54,16 @@ public class Demand
     {
         return aAmount;
     }
+
     /**
-     * @param pAmount the Amount to set.
+     * @param pAmount
+     *            the Amount to set.
      */
     public void setAmount(double pAmount)
     {
         this.aAmount = pAmount;
     }
+
     /**
      * @return the Price Ceiling.
      */
@@ -62,8 +71,10 @@ public class Demand
     {
         return aPriceCeiling;
     }
+
     /**
-     * @param pPriceCeiling the Price Ceiling to set.
+     * @param pPriceCeiling
+     *            the Price Ceiling to set.
      */
     public void setPriceCeiling(Money pPriceCeiling)
     {

@@ -5,18 +5,21 @@ import java.util.Map;
 
 /**
  * A class that caches good objects.
+ * 
  * @author David
- *
+ * 
  */
 public class GoodDirectory
 {
     private Map<String, Good> aGoods = new HashMap<String, Good>();
-    
+
     /**
      * 
-     * @param pName The name to lookup.
+     * @param pName
+     *            The name to lookup.
      * @return The good.
-     * @throws Exception The good might not exist.
+     * @throws Exception
+     *             The good might not exist.
      */
     public Good lookup(String pName) throws Exception
     {
@@ -29,11 +32,13 @@ public class GoodDirectory
             throw new Exception("Good does not exist");
         }
     }
-    
+
     /**
      * 
-     * @param pName The name of the good to add.
-     * @param pValue The value of the good to add.
+     * @param pName
+     *            The name of the good to add.
+     * @param pValue
+     *            The value of the good to add.
      */
     public void addGood(String pName, Money pValue)
     {

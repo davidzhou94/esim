@@ -10,16 +10,18 @@ package esim.model;
 public class Money
 {
     private double aValue;
-    
+
     /**
      * Constructor.
-     * @param pValue The value to initialize with.
+     * 
+     * @param pValue
+     *            The value to initialize with.
      */
     public Money(double pValue)
     {
         aValue = pValue;
     }
-    
+
     /**
      * Get value.
      * 
@@ -57,13 +59,13 @@ public class Money
     {
         return this.aValue == ((Money) pOther).aValue;
     }
-    
+
     @Override
     public int hashCode()
     {
         return super.hashCode();
     }
-    
+
     @Override
     public Money clone()
     {
