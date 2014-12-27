@@ -1,21 +1,32 @@
 package esim.model;
 
 /**
- * A simple class that represents money, eventually this can contain the logic
- * for recording transaction histories and amount constraints and so forth.
+ * A simple class that represents money, eventually this can contain the logic for recording transaction histories and amount constraints and so
+ * forth.
  * 
  * @author David
  * 
  */
-public class Money {
-    private int aValue;
-
+public class Money
+{
+    private double aValue;
+    
+    /**
+     * Constructor.
+     * @param pValue The value to initialize with.
+     */
+    public Money(double pValue)
+    {
+        aValue = pValue;
+    }
+    
     /**
      * Get value.
      * 
-     * @return The value
+     * @return The value.
      */
-    public int getValue() {
+    public double getValue()
+    {
         return aValue;
     }
 
@@ -23,24 +34,39 @@ public class Money {
      * Set value.
      * 
      * @param pValue
-     *            The value to be set
+     *            The value to be set.
      */
-    public void setValue(int pValue) {
+    public void setValue(double pValue)
+    {
         aValue = pValue;
     }
 
     /**
-     * Transact a certain amount
+     * Transact a certain amount.
      * 
      * @param pAmount
      *            The amount to transact
      */
-    public void transact(int pAmount) {
-        aValue = aValue + pAmount;
+    public void transact(double pAmount)
+    {
+        aValue += pAmount;
     }
 
     @Override
-    public boolean equals(Object pOther) {
-        return (this.aValue == ((Money) pOther).aValue);
+    public boolean equals(Object pOther)
+    {
+        return this.aValue == ((Money) pOther).aValue;
+    }
+    
+    @Override
+    public int hashCode()
+    {
+        return super.hashCode();
+    }
+    
+    @Override
+    public Money clone()
+    {
+        return new Money(aValue);
     }
 }
