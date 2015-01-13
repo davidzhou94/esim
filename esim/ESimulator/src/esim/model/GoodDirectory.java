@@ -42,9 +42,19 @@ public class GoodDirectory
      */
     public void addGood(String pName, Money pValue)
     {
-        if (!aGoods.containsKey(pName))
+        addGood(new Good(pName, pValue));
+    }
+    
+    /**
+     * 
+     * @param pGood
+     *            The good object to add.
+     */
+    public void addGood(Good pGood)
+    {
+        if (!aGoods.containsKey(pGood.getName()))
         {
-            aGoods.put(pName, new Good(pName, pValue));
+            aGoods.put(pGood.getName(), pGood);
         }
     }
 }

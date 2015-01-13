@@ -37,6 +37,10 @@ public class Person
         aJobs = new ArrayList<Job>();
     }
 
+    /**
+     * 
+     * @return the output factor.
+     */
     public double getOutput()
     {
         return aOutput;
@@ -97,6 +101,27 @@ public class Person
         for (Demand d : aDemands)
         {
             d.increment();
+        }
+    }
+    
+    /**
+     * Visit the market to make purchase
+     * @param pMarket The Market object.
+     */
+    public void goShopping(Market pMarket)
+    {
+        for (Demand d : aDemands)
+        {
+            pMarket.greedyPurchase(this, d.getGood(), d.getAmount(), d.getPriceCeiling());
+        }
+    }
+    
+    public void goToWorkForAllJobs(double pTime)
+    {
+        double lTimePerJob = Math.floor(pTime / aJobs.size());
+        for (Job j : aJobs)
+        {
+            j.generateProduction(lTimePerJob);
         }
     }
 }

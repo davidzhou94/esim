@@ -65,10 +65,4 @@ public class Money
     {
         return super.hashCode();
     }
-
-    @Override
-    public Money clone()
-    {
-        return new Money(aValue);
-    }
 }

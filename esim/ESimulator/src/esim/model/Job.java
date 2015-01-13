@@ -9,6 +9,7 @@ package esim.model;
 public class Job
 {
     private Person aWorker;
+    private Firm aFirm;
     private double aUnpaidTime;
     private double aUnpaidProd;
     private double aTimePayMultiplier;
@@ -23,9 +24,10 @@ public class Job
      * @param pTimePayMultiplier
      *            The time pay multiplier.
      */
-    public Job(Person pWorker, double pProdPayMultiplier, double pTimePayMultiplier)
+    public Job(Person pWorker, Firm pFirm, double pProdPayMultiplier, double pTimePayMultiplier)
     {
         aWorker = pWorker;
+        aFirm = pFirm;
         aUnpaidTime = 0;
         aUnpaidTime = 0;
         aTimePayMultiplier = pTimePayMultiplier;
@@ -37,7 +39,7 @@ public class Job
      * @param pTime
      *            The time to add.
      */
-    public void addTimeWorked(double pTime)
+    private void addTimeWorked(double pTime)
     {
         aUnpaidTime += pTime;
     }
@@ -47,13 +49,14 @@ public class Job
      * @param pProduction
      *            The production to add.
      */
-    public void addProduction(double pProduction)
+    private void addProduction(double pProduction)
     {
         aUnpaidProd += pProduction;
     }
 
     /**
      * Pays the person working the job the outstanding balance.
+     * 
      */
     public void payOutstandingBalance()
     {
@@ -73,7 +76,8 @@ public class Job
      */
     public void generateProduction(double pTime)
     {
-        this.addProduction(aWorker.getOutput() * pTime);
+        double lProduction = aWorker.getOutput() * pTime;
+        this.addProduction(lProduction);
         this.addTimeWorked(pTime);
     }
 }

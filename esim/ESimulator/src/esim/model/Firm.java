@@ -65,6 +65,35 @@ public class Firm
     {
         aBalance.transact(-1 * pAmount);
     }
+    
+    /**
+     * 
+     * @param pGood The Good to add to inventory.
+     * @param pAmount The amount of the good to add. 
+     */
+    public void addToInventory(Good pGood, double pAmount)
+    {
+        if (aInventory.containsKey(pGood))
+        {
+            double lOldAmount = aInventory.get(pGood);
+            aInventory.put(pGood, pAmount + lOldAmount);
+        }
+        else
+        {
+            aInventory.put(pGood, pAmount);
+        }
+    }
+    
+    public void addProduction(double pAmount)
+    {
+        
+        for (Good g : aProducts)
+        {
+            
+        }
+    }
+    
+    
 
     /**
      * 
